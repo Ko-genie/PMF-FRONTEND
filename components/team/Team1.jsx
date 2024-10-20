@@ -10,7 +10,7 @@ const teamMembers = [
   {
     id: 2,
     name: "Jannatul Ferdaus",
-    role: "CEO",
+    role: "Developer",
     imgSrc: "/images/team/img_05.jpg",
   },
   {
