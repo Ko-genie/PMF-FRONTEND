@@ -52,7 +52,7 @@ const Hero = () => {
               </p>
               <div className="d-sm-flex justify-content-center align-items-center">
                 <Link
-                  href="/contact"
+                  href="/sign-up"
                   className="tran3s fs-17 fw-500 btn-three mb-25 ms-2 me-3"
                 >
                   Try Free Now

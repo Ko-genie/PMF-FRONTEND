@@ -89,7 +89,7 @@ const SassProduct = () => {
                 <p className="text-lg mt-40 mb-75 lg-mt-30 lg-mb-50">
                   Our tools are trusted by over 150,000 clients worldwide.
                 </p>
-                <Link href="/pages-menu/about-us-v1" className="btn-four fw-500">
+                <Link href="/sign-up" className="btn-four fw-500">
                   Try Free Now
                 </Link>
               </div>

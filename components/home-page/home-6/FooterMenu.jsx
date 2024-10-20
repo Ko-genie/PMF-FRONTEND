@@ -20,7 +20,7 @@ const footerData = [
       { label: "Terms of use", href: "/pages-menu/faq" },
       { label: "Terms & conditions", href: "/pages-menu/faq" },
       { label: "Privacy policy", href: "/pages-menu/faq" },
-      { label: "Cookie policy", href: "/pages-menu/faq" },
+      { label: "Cookie policy", href: "/policy/cookie" },
     ],
   },
 ];
