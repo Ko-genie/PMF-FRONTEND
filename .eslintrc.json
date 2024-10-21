@@ -1,42 +1,28 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true
-  },
   "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
     "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
     "plugin:jsx-a11y/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module"
+    }
   },
   "plugins": [
-    "react",
     "@typescript-eslint",
-    "react-hooks",
     "jsx-a11y"
   ],
   "rules": {
-    "@typescript-eslint/no-explicit-any": "warn", // Warn instead of error for `any` types
-    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }], // Warn for unused vars
-    "@typescript-eslint/no-require-imports": "warn", // Warn for require imports
-    "react/no-unescaped-entities": "warn", // Warn for unescaped entities in JSX
-    "react-hooks/rules-of-hooks": "error", // Enforce the rules of hooks
-    "react-hooks/exhaustive-deps": "warn", // Warn when useEffect dependencies are missing
-    "jsx-a11y/no-static-element-interactions": "warn", // Accessibility warning
-    "jsx-a11y/click-events-have-key-events": "warn", // Accessibility warning
-    "@next/next/no-img-element": "warn", // Warn for using <img> instead of next/image
-    "no-var": "error", // Enforce `let` or `const` instead of `var`
-    "react/prop-types": "off" // Turn off prop-types for TypeScript
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-require-imports": "warn",
+    "jsx-a11y/no-static-element-interactions": "warn",
+    "jsx-a11y/click-events-have-key-events": "warn",
+    "@next/next/no-img-element": "warn"
   },
   "settings": {
     "react": {
