@@ -28,7 +28,7 @@ const Policy = () => {
               <p>Last updated May 12, 2022</p>
 
               <p>
-                This label: "label: "label: "Cookie policy", href: "/policy/cookie"", href: "/policy/cookie"", href: "/policy/cookie" explains how KOGENIE E-SOLUTIONS PRIVATE
+                This explains how KOGENIE E-SOLUTIONS PRIVATE
                 LIMITED ("Company", "we", "us", and "our") uses cookies and
                 similar technologies to recognize you when you visit our
                 websites at <a href="http://www.kogenie.com">http://www.kogenie.com</a>.
