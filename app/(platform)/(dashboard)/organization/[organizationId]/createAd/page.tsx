@@ -21,8 +21,6 @@ const CreateAdPage = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
 
-  const [aspectRatio, setAspectRatio] = useState("16:9"); // Default aspect ratio for Instagram landscape posts
-
   useEffect(() => {
     setIsMounted(true);
     if (adDataFromStore) {
@@ -70,14 +68,6 @@ const CreateAdPage = () => {
           // Define aspect ratios: 1:1 (square), 4:5 (portrait), 16:9 (landscape)
           let targetWidth = 640;
           let targetHeight = 360; // Default for 16:9
-
-          if (aspectRatio === "1:1") {
-            targetWidth = 640;
-            targetHeight = 640;
-          } else if (aspectRatio === "4:5") {
-            targetWidth = 640;
-            targetHeight = 800;
-          }
 
           canvas.width = targetWidth;
           canvas.height = targetHeight;

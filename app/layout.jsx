@@ -5,14 +5,13 @@ import { useEffect } from "react";
 import "aos/dist/aos.css";
 import "../styles/index.scss";
 import ScrollToTop from "@/components/common/ScrollTop";
-import './globals.css'
-import { Inter } from 'next/font/google'
+import './globals.css';
+import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] })
+// ES6 import for bootstrap
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-if (typeof window !== "undefined") {
-  require("bootstrap/dist/js/bootstrap");
-}
+const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({ children }) {
   useEffect(() => {
@@ -20,6 +19,7 @@ export default function RootLayout({ children }) {
       duration: 1200,
     });
   }, []);
+
   return (
     <html lang="en">
       <body>
