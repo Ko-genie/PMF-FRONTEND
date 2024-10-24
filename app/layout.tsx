@@ -9,7 +9,7 @@ import { Inter } from 'next/font/google';
 import Aos from 'aos'; // Normal import for aos
 
 // Dynamically import Bootstrap to avoid loading on the server
-// import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';// 
 // const Bootstrap = dynamic(() => import('bootstrap/dist/js/bootstrap.bundle.min.js'), { ssr: false });
 
 const inter = Inter({ subsets: ['latin'] });
