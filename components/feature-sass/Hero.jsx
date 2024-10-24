@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 const Hero = () => {
   return (
@@ -8,7 +9,7 @@ const Hero = () => {
         Create your
         <b className="position-relative d-inline-block fw-normal">
           Identity
-          <img
+          <Image
             src="/images/shape/shape_180.svg"
             alt="shape"
             className="lazy-img shapes line-shape-two"

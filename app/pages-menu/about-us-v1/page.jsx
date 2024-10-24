@@ -1,18 +1,37 @@
-import DefaulHeader from "@/components/header/DefaulHeader";
-import DefaultFooter from "@/components/footer/DefaultFooter";
-import Partners from "@/components/services/Partners";
-import Faq from "@/components/services/Faq";
-import Testimonial from "@/components/home-page/home-3/Testimonial";
-import Block from "@/components/services/Block";
-import Team3 from "@/components/team/Team3";
-import Link from "next/link";
-import VideoBlock from "@/components/about/VideoBlock";
-import Counter from "@/components/about/Counter";
-import Header from "@/components/home-page/home-6/Header";
+import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
-export const metadata = {
-  title: "About Us || KOgenie - E-commerce and Digital Solutions",
-};
+// Dynamically import components with SSR disabled
+const DefaultFooter = dynamic(() => import('@/components/footer/DefaultFooter'), {
+  ssr: false,
+});
+const Partners = dynamic(() => import('@/components/services/Partners'), {
+  ssr: false,
+});
+const Faq = dynamic(() => import('@/components/services/Faq'), {
+  ssr: false,
+});
+const Testimonial = dynamic(() => import('@/components/home-page/home-3/Testimonial'), {
+  ssr: false,
+});
+const Block = dynamic(() => import('@/components/services/Block'), {
+  ssr: false,
+});
+const Team1 = dynamic(() => import('@/components/team/Team1'), {
+  ssr: false,
+});
+const VideoBlock = dynamic(() => import('@/components/about/VideoBlock'), {
+  ssr: false,
+});
+const Counter = dynamic(() => import('@/components/about/Counter'), {
+  ssr: false,
+});
+const Header = dynamic(() => import('@/components/home-page/home-6/Header'), {
+  ssr: false,
+});
+const Image = dynamic(() => import('next/image'), {
+  ssr: false,
+});
 
 const AboutUsV1 = () => {
   const features = [
@@ -65,14 +84,18 @@ const AboutUsV1 = () => {
           </div>
         </div>
 
-        <img
+        <Image
           src="/images/shape/shape_171.svg"
           alt="shape"
+          width={100}
+          height={100}
           className="lazy-img shapes shape-one"
         />
-        <img
+        <Image
           src="/images/shape/shape_172.svg"
           alt="shape"
+          width={100}
+          height={100}
           className="lazy-img shapes shape-two"
         />
       </div>
@@ -138,7 +161,7 @@ const AboutUsV1 = () => {
               </div>
             </div>
             <div className="row">
-              <Team3 />
+              <Team1 />
             </div>
             <p
               className="cr-text text-center text-lg tx-dark mt-75 lg-mt-50"
@@ -159,9 +182,11 @@ const AboutUsV1 = () => {
             </div>
           </div>
         </div>
-        <img
+        <Image
           src="/images/shape/shape_172.svg"
           alt="shape"
+          width={100}
+          height={100}
           className="lazy-img shapes shape-one d-none d-xl-inline-block"
         />
       </div>

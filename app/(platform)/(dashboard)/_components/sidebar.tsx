@@ -21,7 +21,7 @@ export const Sidebar = ({
   const [expanded, setExpanded] = useLocalStorage<Record<string, boolean>>(
     storageKey,
     {}
-  );
+  );  
 
   const {
     organization: activeOrganization,
@@ -98,6 +98,7 @@ export const Sidebar = ({
             isExpanded={expanded[organization.id]}
             organization={organization as Organization}
             onExpand={onExpand}
+            
           />
         ))}
       </Accordion>

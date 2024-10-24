@@ -15,13 +15,15 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({ children }) {
   useEffect(() => {
-    Aos.init({
-      duration: 1200,
-    });
+    if (typeof window !== "undefined") {
+      Aos.init({
+        duration: 1200,
+      });
+    }
   }, []);
 
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <body>
         <div className="main-page-wrapper">
           {children}
@@ -30,4 +32,4 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   );
-}
+};

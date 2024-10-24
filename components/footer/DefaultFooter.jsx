@@ -2,6 +2,7 @@ import Link from "next/link";
 import Footer2 from "./Footer2";
 import NewsLetter from "./NewsLetter";
 import CopyrightFooter2 from "./CopyrightFooter2";
+import Image from "next/image";
 
 const DefaultFooter = () => {
   return (
@@ -12,7 +13,7 @@ const DefaultFooter = () => {
             <div className="col-xl-2 footer-intro mb-40">
               <div className="logo">
                 <Link href="/">
-                  <img src="/images/logo/logo_012.svg" alt="brand" />
+                  <Image src="/images/logo/logo_012.svg" alt="brand" width={90} height={30} />
                 </Link>
               </div>
             </div>
@@ -37,10 +38,12 @@ const DefaultFooter = () => {
       {/* /.bg-wrapper */}
       <CopyrightFooter2 />
       {/* /.bottom-footer */}
-      <img
+      <Image
         src="/images/shape/shape_173.svg"
         alt="shape"
         className="lazy-img shapes shape-one"
+        width={90}
+        height={30}
       />
     </div>
   );

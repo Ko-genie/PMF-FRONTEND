@@ -1,6 +1,5 @@
-// next.config.js
-/** @type {import('next').NextConfig} */
 const nextConfig = {
+  swcMinify: true, // Re-enable minification if you disabled it
   images: {
     remotePatterns: [
       {

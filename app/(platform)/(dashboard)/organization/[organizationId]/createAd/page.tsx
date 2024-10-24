@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, ChangeEvent, CSSProperties } from "react";
+import Image from "next/image";
 import { useAdStore } from "@/store/useAdStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -21,6 +22,8 @@ const CreateAdPage = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
 
+  const [aspectRatio] = useState("16:9"); // Default aspect ratio for Instagram landscape posts
+
   useEffect(() => {
     setIsMounted(true);
     if (adDataFromStore) {
@@ -28,14 +31,14 @@ const CreateAdPage = () => {
     }
   }, [adDataFromStore]);
 
-  const generateAdCopy = () => {
-    if (adData.brandName && adData.productName && adData.productDescription) {
-      return `Introducing ${adData.productName} from ${adData.brandName}! ${adData.productDescription}`;
-    }
-    return "Caption of the post goes here...";
-  };
-
   useEffect(() => {
+    const generateAdCopy = () => {
+      if (adData.brandName && adData.productName && adData.productDescription) {
+        return `Introducing ${adData.productName} from ${adData.brandName}! ${adData.productDescription}`;
+      }
+      return "Caption of the post goes here...";
+    };
+
     const updatedAdCopy = generateAdCopy();
     setAdData((prevState) => ({
       ...prevState,
@@ -53,59 +56,68 @@ const CreateAdPage = () => {
     }));
   };
 
-  // Crop and resize image to match aspect ratio
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const img = new Image();
-        img.src = e.target?.result as string;
-        img.onload = () => {
-          const canvas = document.createElement("canvas");
-          const ctx = canvas.getContext("2d");
+// Crop and resize image to match aspect ratio
+const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const file = event.target.files?.[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      // Use the native Image constructor explicitly
+      const img = new window.Image(640, 360);
+      img.src = e.target?.result as string;
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
 
-          // Define aspect ratios: 1:1 (square), 4:5 (portrait), 16:9 (landscape)
-          let targetWidth = 640;
-          let targetHeight = 360; // Default for 16:9
+        // Define aspect ratios: 1:1 (square), 4:5 (portrait), 16:9 (landscape)
+        let targetWidth = 640;
+        let targetHeight = 360; // Default for 16:9
 
-          canvas.width = targetWidth;
-          canvas.height = targetHeight;
+        if (aspectRatio === "1:1") {
+          targetWidth = 640;
+          targetHeight = 640;
+        } else if (aspectRatio === "4:5") {
+          targetWidth = 640;
+          targetHeight = 800;
+        }
 
-          // Calculate cropping area based on the image's original aspect ratio
-          const imgAspectRatio = img.width / img.height;
-          let sourceWidth = img.width;
-          let sourceHeight = img.height;
+        canvas.width = targetWidth;
+        canvas.height = targetHeight;
 
-          if (imgAspectRatio > targetWidth / targetHeight) {
-            sourceWidth = img.height * (targetWidth / targetHeight);
-          } else {
-            sourceHeight = img.width / (targetWidth / targetHeight);
-          }
+        // Calculate cropping area based on the image's original aspect ratio
+        const imgAspectRatio = img.width / img.height;
+        let sourceWidth = img.width;
+        let sourceHeight = img.height;
 
-          // Center the crop
-          const startX = (img.width - sourceWidth) / 2;
-          const startY = (img.height - sourceHeight) / 2;
+        if (imgAspectRatio > targetWidth / targetHeight) {
+          sourceWidth = img.height * (targetWidth / targetHeight);
+        } else {
+          sourceHeight = img.width / (targetWidth / targetHeight);
+        }
 
-          ctx?.drawImage(
-            img,
-            startX,
-            startY,
-            sourceWidth,
-            sourceHeight,
-            0,
-            0,
-            targetWidth,
-            targetHeight
-          );
+        // Center the crop
+        const startX = (img.width - sourceWidth) / 2;
+        const startY = (img.height - sourceHeight) / 2;
 
-          const resizedImageUrl = canvas.toDataURL("image/jpeg", 1.0); // High-quality image
-          setImageUrl(resizedImageUrl); // Set the resized image URL
-        };
+        ctx?.drawImage(
+          img,
+          startX,
+          startY,
+          sourceWidth,
+          sourceHeight,
+          0,
+          0,
+          targetWidth,
+          targetHeight
+        );
+
+        const resizedImageUrl = canvas.toDataURL("image/jpeg", 1.0); // High-quality image
+        setImageUrl(resizedImageUrl); // Set the resized image URL
       };
-      reader.readAsDataURL(file);
-    }
-  };
+    };
+    reader.readAsDataURL(file);
+  }
+};
 
   const handleDownload = () => {
     if (imageUrl) {
@@ -318,10 +330,12 @@ const CreateAdPage = () => {
             className="post-image-container"
             style={{ textAlign: "center", marginBottom: "20px" }}
           >
-            <img
-              src="https://placehold.co/640x360"
+            <Image
+              src="/background1.jpg"
               alt="Placeholder"
-              style={{ width: "100%", borderRadius: "12px" }}
+              width={640}
+              height={360}
+              style={{ borderRadius: "12px" }}
             />
           </div>
         )}
@@ -347,10 +361,12 @@ const CreateAdPage = () => {
                 padding: "10px",
               }}
             >
-              <img
+              <Image
                 src="/insta-logo.jpg"
-                style={{ width: "40px", borderRadius: "50%" }}
                 alt="Profile"
+                width={40}
+                height={40}
+                style={{ borderRadius: "50%" }}
               />
               <span className="username" style={{ fontWeight: "bold" }}>
                 Brand Name
@@ -362,11 +378,12 @@ const CreateAdPage = () => {
               className="post-image-container"
               style={{ textAlign: "center" }}
             >
-              <img
+              <Image
                 src={imageUrl}
-                className="uploaded-image"
                 alt="Uploaded"
-                style={{ width: "100%", borderRadius: "12px" }}
+                width={640}
+                height={360}
+                style={{ borderRadius: "12px" }}
               />
             </div>
 

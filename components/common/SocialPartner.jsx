@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const logos = [
   { id: "a", src: "/images/logo/p-1.png", className: "lazy-img" },
@@ -28,7 +29,7 @@ const SocialPartner = () => {
         >
           <div className={`img-box bx-${logo.id}`}>
             <a href="#">
-              <img src={logo.src} alt="logo" className={logo.className} />
+              <Image src={logo.src} alt="logo" className={logo.className} />
             </a>
           </div>{" "}
           {/* /.img-box */}

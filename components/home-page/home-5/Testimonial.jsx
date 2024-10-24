@@ -1,6 +1,7 @@
 "use client";
 
 import Slider from "react-slick";
+import Image from "next/image";
 
 const Testimonial = () => {
   const testimonials = [
@@ -43,7 +44,7 @@ const Testimonial = () => {
           <div className="item" key={testimonial.id}>
             <div className="feedback-block-twelve">
               <div className="icon rounded-circle d-flex align-items-center justify-content-center">
-                <img src={testimonial.icon} alt="icon" />
+                <Image src={testimonial.icon} alt="icon" />
               </div>
               <p className="tx-dark mt-35 lg-mt-20">{testimonial.feedback}</p>
               <p className="tx-dark fs-16 fw-500">{testimonial.name}</p>

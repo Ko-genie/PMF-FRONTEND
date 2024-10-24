@@ -1,16 +1,43 @@
-import React from "react";
-import Header from "@/components/home-page/home-6/Header";
-import Hero from "@/components/home-page/home-6/Hero";
-import ScreenHolder from "@/components/home-page/home-6/ScreenHolder";
-import Link from "next/link";
-import ProductTabs from "@/components/home-page/home-6/ProductTabs";
-import TagList from "@/components/home-page/home-6/TagList";
-import Features from "@/components/home-page/home-6/Features";
-import Testimonial from "@/components/home-page/home-6/Testimonial";
-import CircleBgShape from "@/components/home-page/home-6/CircleBgShape";
-import Pricing from "@/components/home-page/home-6/Pricing";
-import FooterMenu from "@/components/home-page/home-6/FooterMenu";
-import CopyrightFooter2 from "@/components/footer/CopyrightFooter2";
+import dynamic from 'next/dynamic';
+import Link from 'next/link';
+
+// Dynamically import components with SSR disabled
+const Header = dynamic(() => import('@/components/home-page/home-6/Header'), {
+  ssr: false,
+});
+const Hero = dynamic(() => import('@/components/home-page/home-6/Hero'), {
+  ssr: false,
+});
+const ScreenHolder = dynamic(() => import('@/components/home-page/home-6/ScreenHolder'), {
+  ssr: false,
+});
+const ProductTabs = dynamic(() => import('@/components/home-page/home-6/ProductTabs'), {
+  ssr: false,
+});
+const TagList = dynamic(() => import('@/components/home-page/home-6/TagList'), {
+  ssr: false,
+});
+const Features = dynamic(() => import('@/components/home-page/home-6/Features'), {
+  ssr: false,
+});
+const Testimonial = dynamic(() => import('@/components/home-page/home-6/Testimonial'), {
+  ssr: false,
+});
+const CircleBgShape = dynamic(() => import('@/components/home-page/home-6/CircleBgShape'), {
+  ssr: false,
+});
+const Pricing = dynamic(() => import('@/components/home-page/home-6/Pricing'), {
+  ssr: false,
+});
+const FooterMenu = dynamic(() => import('@/components/home-page/home-6/FooterMenu'), {
+  ssr: false,
+});
+const CopyrightFooter2 = dynamic(() => import('@/components/footer/CopyrightFooter2'), {
+  ssr: false,
+});
+const Image = dynamic(() => import('next/image'), {
+  ssr: false,
+});
 
 const SassProduct = () => {
   return (
@@ -137,10 +164,12 @@ const SassProduct = () => {
             <div className="col-xxl-6 col-lg-7 col-md-8 col-sm-10 m-auto">
               <div className="title-style-three text-center mb-70 lg-mb-40">
                 <div className="icon d-flex align-items-center justify-content-center rounded-circle">
-                  <img
+                  <Image
                     src="/images/icon/icon_19.svg"
                     alt="icon"
                     className="lazy-img"
+                    width={50}
+                    height={50}
                   />
                 </div>
                 <h2 className="main-title fw-500">
@@ -179,7 +208,10 @@ const SassProduct = () => {
       </div>
 
       {/* Fancy Short Banner Two */}
-      <div className="fancy-short-banner-two mt-150 lg-mt-100" data-aos="fade-up">
+      <div
+        className="fancy-short-banner-two mt-150 lg-mt-100"
+        data-aos="fade-up"
+      >
         <div className="container">
           <div className="bg-wrapper ms-xxl-4 me-xxl-4 position-relative">
             <div className="inner-wrapper m-auto">

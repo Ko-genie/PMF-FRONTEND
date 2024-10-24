@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
+import Image from 'next/image'; // Add this import
 
 const VideoBlock = () => {
   const [isOpen, setOpen] = useState(false);
@@ -23,10 +24,12 @@ const VideoBlock = () => {
               className="fancybox video-icon tran3s rounded-circle d-flex align-items-center justify-content-center"
               onClick={() => setOpen(true)}
             >
-              <img
+              <Image
                 src="/images/icon/icon_140.svg"
                 alt="icon"
                 className="lazy-img"
+                width={50}  // You need to provide width
+                height={50} // And height for the image
               />
             </button>
           </div>
