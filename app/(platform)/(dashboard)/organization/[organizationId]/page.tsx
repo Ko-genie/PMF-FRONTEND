@@ -68,7 +68,7 @@ const OrganizationIdPage = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5001/createAd", {
+      const response = await fetch("https://server-eta-lovat.vercel.app/createAd", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url, gender, ageGroup }), // Send gender and ageGroup along with the URL
