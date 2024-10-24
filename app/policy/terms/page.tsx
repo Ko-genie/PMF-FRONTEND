@@ -1,14 +1,8 @@
-import dynamic from 'next/dynamic';
+import DefaulHeader from "@/components/header/DefaulHeader";
+import DefaultFooter from "@/components/footer/DefaultFooter";
 
-// Dynamically import the header and footer with SSR disabled
-const DefaulHeader = dynamic(() => import('@/components/header/DefaulHeader'), {
-  ssr: false,
-});
-const DefaultFooter = dynamic(() => import('@/components/footer/DefaultFooter'), {
-  ssr: false,
-});
 
-const Policy = () => {
+const TPolicy = () => {
   return (
     <>
       {/* 
@@ -76,4 +70,4 @@ const Policy = () => {
   );
 };
 
-export default Policy;
+export default TPolicy;

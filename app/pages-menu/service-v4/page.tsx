@@ -1,31 +1,33 @@
-import dynamic from 'next/dynamic';
-import Image from 'next/image';
-
-// Dynamically import components with SSR disabled
-const Header = dynamic(() => import('@/components/home-page/home-6/Header'), {
-  ssr: false,
-});
-const Footer = dynamic(() => import('@/components/home-page/home-6/FooterMenu'), {
-  ssr: false,
-});
-const Block2 = dynamic(() => import('@/components/services/Block2'), {
-  ssr: false,
-});
-const Faq4 = dynamic(() => import('@/components/faqs/Faq4'), {
-  ssr: false,
-});
-const Testimonial = dynamic(() => import('@/components/services/Testimonial'), {
-  ssr: false,
-});
-const CallToActions = dynamic(() => import('@/components/services/CallToActions'), {
-  ssr: false,
-});
+import Image from "next/image";
+import Footer from "@/components/home-page/home-6/FooterMenu";
+import Header from "@/components/home-page/home-6/Header";
+import Block2 from "@/components/services/Block2";
+import Faq4 from "@/components/faqs/Faq4";
+import Testimonial from "@/components/services/Testimonial";
+import CallToActions from "@/components/services/CallToActions";
 
 const ServiceV4 = () => {
   return (
     <>
       {/* Header */}
       <Header />
+
+      {/* Inner Banner */}
+      {/* <div className="inner-banner-three text-center p-30">
+        <div
+          className="bg-wrapper text-center"
+          style={{ backgroundImage: "url(/images/assets/bg-17.svg)" }}
+        >
+          <div className="container">
+            <div className="title-style-five">
+              <h2 className="main-title tx-dark fw-bold">Our Services</h2>
+            </div>
+            <p className="fs-20 mt-30 lg-mt-20">
+              KOgenie offers top-tier solutions in e-commerce integration, product management, and digital marketing.
+            </p>
+          </div>
+        </div>
+      </div> */}
 
       {/* Feature Section One */}
       <div className="fancy-feature-one pt-120 lg-pt-90">
@@ -35,7 +37,7 @@ const ServiceV4 = () => {
               fontSize: "5rem",
               justifyContent: "center",
               textAlign: "center",
-              marginBottom: '2rem',
+              marginBottom:'2rem',
             }}
             className="main-title font-recoleta fw-normal tx-dark"
           >
@@ -161,6 +163,8 @@ const ServiceV4 = () => {
                   <span>one click</span>.
                 </h2>
               </div>
+             
+              
             </div>
           </div>
         </div>

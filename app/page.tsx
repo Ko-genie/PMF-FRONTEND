@@ -1,43 +1,20 @@
-import dynamic from 'next/dynamic';
-import Link from 'next/link';
+import React from "react";
 
-// Dynamically import components with SSR disabled
-const Header = dynamic(() => import('@/components/home-page/home-6/Header'), {
-  ssr: false,
-});
-const Hero = dynamic(() => import('@/components/home-page/home-6/Hero'), {
-  ssr: false,
-});
-const ScreenHolder = dynamic(() => import('@/components/home-page/home-6/ScreenHolder'), {
-  ssr: false,
-});
-const ProductTabs = dynamic(() => import('@/components/home-page/home-6/ProductTabs'), {
-  ssr: false,
-});
-const TagList = dynamic(() => import('@/components/home-page/home-6/TagList'), {
-  ssr: false,
-});
-const Features = dynamic(() => import('@/components/home-page/home-6/Features'), {
-  ssr: false,
-});
-const Testimonial = dynamic(() => import('@/components/home-page/home-6/Testimonial'), {
-  ssr: false,
-});
-const CircleBgShape = dynamic(() => import('@/components/home-page/home-6/CircleBgShape'), {
-  ssr: false,
-});
-const Pricing = dynamic(() => import('@/components/home-page/home-6/Pricing'), {
-  ssr: false,
-});
-const FooterMenu = dynamic(() => import('@/components/home-page/home-6/FooterMenu'), {
-  ssr: false,
-});
-const CopyrightFooter2 = dynamic(() => import('@/components/footer/CopyrightFooter2'), {
-  ssr: false,
-});
-const Image = dynamic(() => import('next/image'), {
-  ssr: false,
-});
+import Header from "@/components/home-page/home-6/Header";
+import Hero from "@/components/home-page/home-6/Hero";
+import ScreenHolder from "@/components/home-page/home-6/ScreenHolder";
+import Link from "next/link";
+import ProductTabs from "@/components/home-page/home-6/ProductTabs";
+import TagList from "@/components/home-page/home-6/TagList";
+import Features from "@/components/home-page/home-6/Features";
+import Testimonial from "@/components/home-page/home-6/Testimonial";
+import CircleBgShape from "@/components/home-page/home-6/CircleBgShape";
+
+import Pricing from "@/components/home-page/home-6/Pricing";
+
+import FooterMenu from "@/components/home-page/home-6/FooterMenu";
+import CopyrightFooter2 from "@/components/footer/CopyrightFooter2";
+import Image from "next/image";
 
 const SassProduct = () => {
   return (
@@ -168,8 +145,8 @@ const SassProduct = () => {
                     src="/images/icon/icon_19.svg"
                     alt="icon"
                     className="lazy-img"
-                    width={50}
-                    height={50}
+                    width={50} // Add width
+                    height={50} // Add height
                   />
                 </div>
                 <h2 className="main-title fw-500">

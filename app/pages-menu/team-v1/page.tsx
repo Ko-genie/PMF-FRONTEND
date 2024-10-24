@@ -1,27 +1,24 @@
-import dynamic from 'next/dynamic';
+import DefaulHeader from "@/components/header/DefaulHeader";
+import DefaultFooter from "@/components/footer/DefaultFooter";
+import Team1 from "@/components/team/Team1";
+import CallToAction from "@/components/team/CallToAction";
 import Image from "next/image";
-
-// Dynamically import components with SSR disabled
-const DefaulHeader = dynamic(() => import('@/components/header/DefaulHeader'), {
-  ssr: false,
-});
-const DefaultFooter = dynamic(() => import('@/components/footer/DefaultFooter'), {
-  ssr: false,
-});
-const Team1 = dynamic(() => import('@/components/team/Team1'), {
-  ssr: false,
-});
-const CallToAction = dynamic(() => import('@/components/team/CallToAction'), {
-  ssr: false,
-});
 
 const TeamV1 = () => {
   return (
     <>
-      {/* Header */}
+      {/* <!-- 
+      =============================================
+      Theme Default Menu
+      ============================================== 	
+      --> */}
       <DefaulHeader />
 
-      {/* Feature Section Fifty One */}
+      {/* 
+        =============================================
+        Feature Section Fifty One
+        ============================================== 
+        */}
       <div className="fancy-feature-fiftyOne position-relative mt-200">
         <div className="container">
           <div className="row">
@@ -31,7 +28,7 @@ const TeamV1 = () => {
                   Our Team
                 </div>
                 <h2 className="main-title fw-500 tx-dark">
-                  World’s most qualified team members.
+                  World most qualified team member.
                 </h2>
               </div>
             </div>
@@ -41,21 +38,25 @@ const TeamV1 = () => {
 
         <Image
           src="/images/shape/shape_172.svg"
-          alt="shape"
+          alt="shap"
           width={90}
           height={30}
           className="lazy-img shapes shape-two"
         />
         <Image
           src="/images/shape/shape_175.svg"
-          alt="shape"
+          alt="shap"
           width={90}
           height={30}
           className="lazy-img shapes shape-three"
         />
       </div>
 
-      {/* Team Section Two */}
+      {/*
+			=====================================================
+				Team Section Two
+			=====================================================
+			*/}
       <div className="team-section-two mt-20">
         <div className="container">
           <div className="wrapper border-bottom pb-120 lg-pb-80 position-relative">
@@ -65,7 +66,7 @@ const TeamV1 = () => {
             {/* /.row */}
 
             <CallToAction />
-            {/* End call to action */}
+            {/* End  call to action*/}
           </div>
           {/* /.wrapper */}
         </div>
@@ -73,7 +74,11 @@ const TeamV1 = () => {
       </div>
       {/* /.team-section-two */}
 
-      {/* Footer */}
+      {/* 
+        =============================================
+        Contact Section One
+        ============================================== 
+        */}
       <DefaultFooter />
     </>
   );

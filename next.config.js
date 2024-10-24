@@ -1,5 +1,5 @@
 const nextConfig = {
-  swcMinify: true, // Re-enable minification if you disabled it
+  swcMinify: false,
   images: {
     remotePatterns: [
       {

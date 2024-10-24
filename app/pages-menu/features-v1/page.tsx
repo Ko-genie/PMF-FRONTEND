@@ -1,47 +1,29 @@
-import dynamic from 'next/dynamic';
-import Image from 'next/image';
+import React from "react";
 
-// Dynamically import components with SSR disabled
-const Header = dynamic(() => import('@/components/home-page/home-6/Header'), {
-  ssr: false,
-});
-const FooterMenu = dynamic(() => import('@/components/home-page/home-6/FooterMenu'), {
-  ssr: false,
-});
-const CopyrightFooter2 = dynamic(() => import('@/components/footer/CopyrightFooter2'), {
-  ssr: false,
-});
-const Partner = dynamic(() => import('@/components/feature-sass/Partner'), {
-  ssr: false,
-});
-const Blog = dynamic(() => import('@/components/feature-sass/Blog'), {
-  ssr: false,
-});
-const Features = dynamic(() => import('@/components/feature-sass/Features'), {
-  ssr: false,
-});
-const Features2 = dynamic(() => import('@/components/feature-sass/Features2'), {
-  ssr: false,
-});
-const Hero = dynamic(() => import('@/components/feature-sass/Hero'), {
-  ssr: false,
-});
+import Header from "@/components/home-page/home-6/Header";
+import FooterMenu from "@/components/home-page/home-6/FooterMenu";
+import CopyrightFooter2 from "@/components/footer/CopyrightFooter2";
+import Image from "next/image";
+import Partner from "@/components/feature-sass/Partner";
+import Blog from "@/components/feature-sass/Blog";
+import Features from "@/components/feature-sass/Features";
+import Features2 from "@/components/feature-sass/Features2";
+import Hero from "@/components/feature-sass/Hero";
 
 const FeaturesV1 = () => {
   return (
     <>
-      {/* 
+      {/* <!-- 
       =============================================
-      Theme Default Menu
-      ============================================== 	
-      */}
+        Theme Default Menu
+        ============================================== 	
+      --> */}
       <Header />
-
       {/* 
-      =============================================
-      Theme Hero Banner
-      ============================================== 
-      */}
+        =============================================
+        Theme Hero Banner
+        ============================================== 
+        */}
       <div className="hero-banner-two position-relative pt-160 md-pt-150">
         <Image
           src="/images/shape/shape_182.svg"
@@ -63,6 +45,7 @@ const FeaturesV1 = () => {
               <Hero />
             </div>
           </div>
+          {/* End .row */}
 
           <div
             className="illustration-holder position-relative mt-100 lg-mt-80 xs-mt-30"
@@ -82,14 +65,16 @@ const FeaturesV1 = () => {
               </div>
             </div>
           </div>
+          {/* /.illustration-holder */}
         </div>
+        {/* /.container */}
       </div>
-
+      {/* /.hero-banner-two */}
       {/* 
-      =============================================
-      Feature Section Fifty Five
-      ============================================== 
-      */}
+        =============================================
+        Feature Section Fifty Five
+        ============================================== 
+        */}
       <div className="fancy-feature-fiftyFive position-relative zn2 pt-140 lg-pt-80 pb-140 lg-pb-80">
         <div className="container">
           <div className="row">
@@ -110,8 +95,10 @@ const FeaturesV1 = () => {
                       for all sectors.
                     </h2>
                   </div>
+                  {/* /.title-style-three */}
                 </div>
               </div>
+              {/* End header title */}
 
               <div className="row">
                 <div className="col-lg-7 col-md-6 order-md-last">
@@ -122,6 +109,7 @@ const FeaturesV1 = () => {
                     <div className="solid-line order-md-first" />
                   </div>
                 </div>
+                {/* End .col */}
                 <div className="col-lg-5 col-md-6 order-md-first">
                   <div className="title-style-thirteen text-center text-md-start sm-mt-20">
                     <h2 className="main-title font-recoleta fw-normal">
@@ -130,10 +118,12 @@ const FeaturesV1 = () => {
                   </div>
                 </div>
               </div>
+              {/* End .row */}
 
               <div className="row">
                 <Features />
               </div>
+              {/* End .row */}
 
               <div className="mt-150 lg-mt-80">
                 <div className="row">
@@ -145,6 +135,7 @@ const FeaturesV1 = () => {
                       <div className="solid-line" />
                     </div>
                   </div>
+                  {/* End col-lg-7 */}
                   <div className="col-lg-5 col-md-6">
                     <div className="title-style-thirteen text-center text-md-start sm-mt-20">
                       <h2 className="main-title font-recoleta fw-normal">
@@ -152,7 +143,9 @@ const FeaturesV1 = () => {
                       </h2>
                     </div>
                   </div>
+                  {/* End .col-lg-5 */}
                 </div>
+                {/* End .row */}
 
                 <div className="row">
                   <Features2 />
@@ -160,17 +153,20 @@ const FeaturesV1 = () => {
               </div>
             </div>
           </div>
+          {/* /.row */}
         </div>
+        {/* /.container */}
         <div className="shapes shape-one rounded-circle" />
         <div className="shapes shape-two rounded-circle" />
         <div className="shapes shape-three rounded-circle" />
       </div>
+      {/* /.fancy-feature-fiftyFive */}
 
       {/* 
-      =============================================
-      Blog Section Seven
-      ============================================== 
-      */}
+        =============================================
+        Blog Section Seven
+        ============================================== 
+        */}
       <div className="blog-section-seven position-relative mt-150 lg-mt-90">
         <div className="container">
           <div className="row">
@@ -194,20 +190,27 @@ const FeaturesV1 = () => {
                       get real results with Jano.
                     </h2>
                   </div>
+                  {/* /.title-style-three */}
                 </div>
               </div>
+              {/* End .row */}
 
               <div className="row gx-xxl-5">
                 <Blog />
               </div>
             </div>
           </div>
+          {/* /.row */}
         </div>
+        {/* /.container */}
       </div>
+      {/* /.blog-section-seven */}
 
       {/* 
-      Partner Section Six
-      */}
+			=============================================
+				Partner Section Six
+			============================================== 
+			*/}
       <div
         className="partner-section-six mt-80 mb-225 lg-mt-60 lg-mb-200 md-mb-120"
         data-aos="fade-up"
@@ -220,8 +223,13 @@ const FeaturesV1 = () => {
           </div>
         </div>
       </div>
+      {/* /.partner-section-six */}
 
-      {/* Footer */}
+      {/*
+        =====================================================
+        Footer
+        =====================================================
+        */}
       <div className="footer-style-two theme-basic-footer">
         <div className="top-footer position-relative">
           <div className="container">
@@ -230,6 +238,7 @@ const FeaturesV1 = () => {
                 <FooterMenu />
               </div>
             </div>
+            {/* /.inner-wrapper */}
           </div>
           <div className="shapes shape-one rounded-circle" />
           <div className="shapes shape-two rounded-circle" />
@@ -244,8 +253,10 @@ const FeaturesV1 = () => {
             className="lazy-img shapes shape-four"
           />
         </div>
+        {/* /.top-footer */}
         <CopyrightFooter2 />
       </div>
+      {/* /.footer-style-two */}
     </>
   );
 };

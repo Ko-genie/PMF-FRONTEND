@@ -1,35 +1,23 @@
-import dynamic from 'next/dynamic';
-import Link from 'next/link';
-
-// Dynamically import components with SSR disabled
-const DefaulHeader = dynamic(() => import('@/components/header/DefaulHeader'), {
-  ssr: false,
-});
-const DefaultFooter = dynamic(() => import('@/components/footer/DefaultFooter'), {
-  ssr: false,
-});
-const FaqAccordion = dynamic(() => import('@/components/faqs/FaqAccordion'), {
-  ssr: false,
-});
-const Image = dynamic(() => import('next/image'), {
-  ssr: false,
-});
-
+import DefaulHeader from "@/components/header/DefaulHeader";
+import DefaultFooter from "@/components/footer/DefaultFooter";
+import FaqAccordion from "@/components/faqs/FaqAccordion";
+import Link from "next/link";
+import Image from 'next/image';
 const Faq = () => {
   return (
     <>
-      {/* 
+      {/* <!-- 
       =============================================
       Theme Default Menu
       ============================================== 	
-      */}
+      --> */}
       <DefaulHeader />
 
       {/* 
-      =============================================
-      Feature Section Fifty One
-      ============================================== 
-      */}
+			=============================================
+				Feature Section Fifty One
+			============================================== 
+			*/}
       <div className="fancy-feature-fiftyOne position-relative mt-200">
         <div className="container">
           <div className="row">
@@ -50,10 +38,10 @@ const Faq = () => {
       {/* /.fancy-feature-fiftyOne */}
 
       {/* 
-      =============================================
-      Feature Section Thirty Three
-      ============================================== 
-      */}
+			=============================================
+				Feature Section Thirty Three
+			============================================== 
+			*/}
       <div className="fancy-feature-thirtyThree mt-100 lg-mt-80">
         <div className="container">
           <div className="border-bottom pb-100 lg-pb-70">
@@ -79,10 +67,10 @@ const Faq = () => {
       {/* /.fancy-feature-thirtyThree */}
 
       {/* 
-      =============================================
-      Contact Section One
-      ============================================== 
-      */}
+        =============================================
+        Contact Section One
+        ============================================== 
+        */}
       <DefaultFooter />
     </>
   );

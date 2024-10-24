@@ -1,37 +1,23 @@
-import dynamic from 'next/dynamic';
-
-// Dynamically import components with SSR disabled
-const BlockContact5 = dynamic(() => import('@/components/contact/BlockContact'), {
-  ssr: false,
-});
-const ContactForm4 = dynamic(() => import('@/components/contact/ContactForm'), {
-  ssr: false,
-});
-const Map2 = dynamic(() => import('@/components/contact/Map'), {
-  ssr: false,
-});
-const DefaultFooter = dynamic(() => import('@/components/footer/DefaultFooter'), {
-  ssr: false,
-});
-const Header = dynamic(() => import('@/components/home-page/home-6/Header'), {
-  ssr: false,
-});
+import BlockContact5 from "@/components/contact/BlockContact";
+import ContactForm4 from "@/components/contact/ContactForm";
+import Map2 from "@/components/contact/Map";
+import DefaultFooter from "@/components/footer/DefaultFooter";
+import Header from "@/components/home-page/home-6/Header";
 
 const ContactV4 = () => {
   return (
     <>
-      {/* 
+      {/* <!-- 
       =============================================
       Theme Default Menu
       ============================================== 	
-      */}
+      --> */}
       <Header />
-
       {/* 
-      =============================================
-      Contact Section Four
-      ============================================== 
-      */}
+			=============================================
+				Contact Section Four
+			============================================== 
+			*/}
       <div className="contact-section-four pt-180 md-pt-150">
         <div className="container">
           <div className="row">
@@ -85,12 +71,11 @@ const ContactV4 = () => {
         {/* /.contact-meta */}
       </div>
       {/* /.contact-section-four */}
-      
       {/* 
-      =============================================
-      Contact Section One
-      ============================================== 
-      */}
+        =============================================
+        Contact Section One
+        ============================================== 
+        */}
       <DefaultFooter />
     </>
   );

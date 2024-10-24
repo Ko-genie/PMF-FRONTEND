@@ -1,37 +1,14 @@
-import dynamic from 'next/dynamic';
-import Link from 'next/link';
-
-// Dynamically import components with SSR disabled
-const DefaultFooter = dynamic(() => import('@/components/footer/DefaultFooter'), {
-  ssr: false,
-});
-const Partners = dynamic(() => import('@/components/services/Partners'), {
-  ssr: false,
-});
-const Faq = dynamic(() => import('@/components/services/Faq'), {
-  ssr: false,
-});
-const Testimonial = dynamic(() => import('@/components/home-page/home-3/Testimonial'), {
-  ssr: false,
-});
-const Block = dynamic(() => import('@/components/services/Block'), {
-  ssr: false,
-});
-const Team1 = dynamic(() => import('@/components/team/Team1'), {
-  ssr: false,
-});
-const VideoBlock = dynamic(() => import('@/components/about/VideoBlock'), {
-  ssr: false,
-});
-const Counter = dynamic(() => import('@/components/about/Counter'), {
-  ssr: false,
-});
-const Header = dynamic(() => import('@/components/home-page/home-6/Header'), {
-  ssr: false,
-});
-const Image = dynamic(() => import('next/image'), {
-  ssr: false,
-});
+import DefaultFooter from "@/components/footer/DefaultFooter";
+import Partners from "@/components/services/Partners";
+import Faq from "@/components/services/Faq";
+import Testimonial from "@/components/home-page/home-3/Testimonial";
+import Block from "@/components/services/Block";
+import Team1 from "@/components/team/Team1";
+import Link from "next/link";
+import VideoBlock from "@/components/about/VideoBlock";
+import Counter from "@/components/about/Counter";
+import Header from "@/components/home-page/home-6/Header";
+import Image from 'next/image';
 
 const AboutUsV1 = () => {
   const features = [

@@ -1,12 +1,9 @@
-import dynamic from 'next/dynamic';
+import DefaulHeader from "@/components/header/DefaulHeader";
+import DefaultFooter from "@/components/footer/DefaultFooter";
 
-// Dynamically import the header and footer with SSR disabled
-const DefaulHeader = dynamic(() => import('@/components/header/DefaulHeader'), {
-  ssr: false,
-});
-const DefaultFooter = dynamic(() => import('@/components/footer/DefaultFooter'), {
-  ssr: false,
-});
+export const metadata = {
+  title: "Cookie policy",
+};
 
 const Policy = () => {
   return (

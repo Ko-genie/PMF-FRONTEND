@@ -1,54 +1,35 @@
-import dynamic from 'next/dynamic';
-
-// Dynamically import components with SSR disabled
-const Header = dynamic(() => import('@/components/home-page/home-6/Header'), {
-  ssr: false,
-});
-const DefaultFooter = dynamic(() => import('@/components/footer/DefaultFooter'), {
-  ssr: false,
-});
-const Pagination = dynamic(() => import('@/components/blog/Pagination'), {
-  ssr: false,
-});
-const SearchBox = dynamic(() => import('@/components/blog/SearchBox'), {
-  ssr: false,
-});
-const Category = dynamic(() => import('@/components/blog/Category'), {
-  ssr: false,
-});
-const RecentPost = dynamic(() => import('@/components/blog/RecentPost'), {
-  ssr: false,
-});
-const BannerPost = dynamic(() => import('@/components/blog/BannerPost'), {
-  ssr: false,
-});
-const Blog2 = dynamic(() => import('@/components/blog/Blog'), {
-  ssr: false,
-});
-const Image = dynamic(() => import('next/image'), {
-  ssr: false,
-});
+// import DefaulHeader from "@/components/header/DefaulHeader";
+import DefaultFooter from "@/components/footer/DefaultFooter";
+import Pagination from "@/components/blog/Pagination";
+import SearchBox from "@/components/blog/SearchBox";
+import Category from "@/components/blog/Category";
+import RecentPost from "@/components/blog/RecentPost";
+import BannerPost from "@/components/blog/BannerPost";
+import Blog2 from "@/components/blog/Blog";
+import Header from "@/components/home-page/home-6/Header";
+import Image from "next/image";
 
 const GridWithSidebar = () => {
   return (
     <>
-      {/* 
+      {/* <!-- 
       =============================================
       Theme Default Menu
       ============================================== 	
-      */}
+      --> */}
       <Header />
 
       {/* 
-      =============================================
-      Feature Section Fifty One
-      ============================================== 
-      */}
+			=============================================
+			Feature Section Fifty One
+			============================================== 
+			*/}
       <div className="fancy-feature-fiftyOne position-relative mt-200">
         <div className="container">
           <div className="row">
             <div className="col-lg-7" data-aos="fade-right">
               <div className="title-style-five mb-65 lg-mb-40">
+                
                 <h2 className="main-title fw-500 tx-dark">
                   Check our inside news &amp; update.
                 </h2>
@@ -60,17 +41,17 @@ const GridWithSidebar = () => {
         <Image
           src="/images/shape/shape_172.svg"
           alt="shape"
-          width={90}
-          height={30}
+          height={280}
+          width={360}
           className="lazy-img shapes shape-two"
         />
       </div>
 
-      {/* 
-      =============================================
-      Blog Section Five
-      ============================================== 
-      */}
+      {/*
+			=====================================================
+				Blog Section Five
+			=====================================================
+			*/}
       <div className="blog-section-five mt-70 lg-mt-30">
         <div className="container">
           <div className="border-bottom pb-130 lg-pb-60">
@@ -118,10 +99,10 @@ const GridWithSidebar = () => {
       </div>
 
       {/* 
-      =============================================
-      Contact Section One
-      ============================================== 
-      */}
+        =============================================
+        Contact Section One
+        ============================================== 
+        */}
       <DefaultFooter />
     </>
   );
