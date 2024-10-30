@@ -3,7 +3,7 @@ import Footer from "@/components/home-page/home-6/FooterMenu";
 import Header from "@/components/home-page/home-6/Header";
 import Block2 from "@/components/services/Block2";
 import Faq4 from "@/components/faqs/Faq4";
-import Testimonial from "@/components/services/Testimonial";
+// import Testimonial from "@/components/services/Testimonial";
 import CallToActions from "@/components/services/CallToActions";
 
 const ServiceV4 = () => {
@@ -132,7 +132,7 @@ const ServiceV4 = () => {
       </div>
 
       {/* Feedback Section */}
-      <div
+      {/* <div
         className="feedback-section-one zn2 position-relative"
         data-aos="fade-up"
       >
@@ -150,10 +150,10 @@ const ServiceV4 = () => {
           </div>
           <Testimonial />
         </div>
-      </div>
+      </div> */}
 
       {/* Wrapper */}
-      <div className="wrapper position-relative mt-160 lg-mt-100">
+      {/* <div className="wrapper position-relative mt-160 lg-mt-100">
         <div className="container">
           <div className="row">
             <div className="col-xl-8 col-lg-10 m-auto text-center">
@@ -167,9 +167,9 @@ const ServiceV4 = () => {
               
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <Image
+        {/* <Image
           width={8}
           height={8}
           src="/images/shape/shape_20.svg"
@@ -201,7 +201,7 @@ const ServiceV4 = () => {
           className="lazy-img shapes shape-four"
           style={{ top: "-3%", right: "14%" }}
         />
-      </div>
+      </div> */}
 
       {/* Call To Actions */}
       <CallToActions />
