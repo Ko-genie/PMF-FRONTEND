@@ -14,6 +14,14 @@ import blogsData from "@/data/blog";
 import Image from "next/image";
 import styles from "./DynamicBlogDetails.module.css"; // Import CSS module
 
+// interface Metadata {
+//   title: string;
+// }
+
+// export const metadata: Metadata = {
+//   title: "Dynamic Blog Details || Jano - Creative Multipurpose React NextJS Template",
+// };
+
 interface DynamicBlogDetailsProps {
   params: {
     id: string;

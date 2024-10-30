@@ -1,5 +1,6 @@
 import FooterMenu from "@/components/home-page/home-6/FooterMenu";
 import CopyrightFooter2 from "@/components/footer/CopyrightFooter2";
+// import Pagination from "@/components/blog/Pagination";
 import SearchBox from "@/components/blog/SearchBox";
 import Category from "@/components/blog/Category";
 import RecentPost from "@/components/blog/RecentPost";
