@@ -1,10 +1,13 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import Header from "@/components/home-page/home-6/Header";
-import Block2 from "@/components/services/Block2";
-import Faq4 from "@/components/faqs/Faq4";
-import CallToActions from "@/components/services/CallToActions";
-import FooterMenu from "@/components/home-page/home-6/FooterMenu";
-import CopyrightFooter2 from "@/components/footer/CopyrightFooter2";
+
+// Dynamically import components to load only on the client-side
+const Header = dynamic(() => import("@/components/home-page/home-6/Header"), { ssr: false });
+const Block2 = dynamic(() => import("@/components/services/Block2"), { ssr: false });
+const Faq4 = dynamic(() => import("@/components/faqs/Faq4"), { ssr: false });
+const CallToActions = dynamic(() => import("@/components/services/CallToActions"), { ssr: false });
+const FooterMenu = dynamic(() => import("@/components/home-page/home-6/FooterMenu"), { ssr: false });
+const CopyrightFooter2 = dynamic(() => import("@/components/footer/CopyrightFooter2"), { ssr: false });
 
 const ServiceV4 = () => {
   return (
@@ -15,7 +18,6 @@ const ServiceV4 = () => {
       {/* Feature Section One */}
       <div className="fancy-feature-one pt-120 lg-pt-90">
         <div className="container">
-        
           <h2
             style={{
               fontSize: "5rem",
@@ -125,11 +127,10 @@ const ServiceV4 = () => {
       </div>
 
       {/* Call To Actions */}
-
       <CallToActions />
 
-     {/* Footer */}
-     <div className="footer-style-two theme-basic-footer">
+      {/* Footer */}
+      <div className="footer-style-two theme-basic-footer">
         <div className="top-footer position-relative">
           <div className="container">
             <div className="inner-wrapper m-auto">
@@ -141,7 +142,6 @@ const ServiceV4 = () => {
         </div>
 
         <CopyrightFooter2 />
-
       </div>
     </>
   );
