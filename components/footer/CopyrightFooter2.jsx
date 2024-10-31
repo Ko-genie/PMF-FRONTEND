@@ -3,7 +3,7 @@ import Link from "next/link";
 const links = [
   {
     title: "Privacy & Terms.",
-    href: "/privacy/cookie",
+    href: "/policy/privacy",
   },
   {
     title: "Contact Us",

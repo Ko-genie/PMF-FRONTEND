@@ -1,5 +1,6 @@
-import DefaulHeader from "@/components/header/DefaulHeader";
-import DefaultFooter from "@/components/footer/DefaultFooter";
+import Header from "@/components/home-page/home-6/Header";
+import FooterMenu from "@/components/home-page/home-6/FooterMenu";
+import CopyrightFooter2 from "@/components/footer/CopyrightFooter2";
 
 export const metadata = {
   title: "Cookie policy",
@@ -13,7 +14,7 @@ const Policy = () => {
       Theme Default Menu
       ============================================== 	
       */}
-      <DefaulHeader />
+      <Header />
 
       <div className="policy-content mt-200">
         <div className="container">
@@ -68,7 +69,21 @@ const Policy = () => {
         </div>
       </div>
 
-      <DefaultFooter />
+      {/* Footer */}
+      <div className="footer-style-two theme-basic-footer">
+        <div className="top-footer position-relative">
+          <div className="container">
+            <div className="inner-wrapper m-auto">
+              <div className="row">
+                <FooterMenu />
+              </div>
+            </div>
+            {/* /.inner-wrapper */}
+          </div>
+        </div>
+        {/* /.top-footer */}
+        <CopyrightFooter2 />
+      </div>
     </>
   );
 };
