@@ -1,23 +1,12 @@
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
-
-// Dynamically import DefaulHeader and Image with SSR disabled
-const DefaulHeader = dynamic(() => import('@/components/header/DefaulHeader'), {
-  ssr: false,
-});
-const Image = dynamic(() => import('next/image'), {
-  ssr: false,
-});
+import Header from "@/components/home-page/home-6/Header";
+import Image from "next/image";
 
 const Pricing = () => {
   return (
     <>
-      {/* 
-      =============================================
-      Theme Default Menu
-      ============================================== 	
-      */}
-      <DefaulHeader />
+      {/* Header */}
+      <Header />
 
       {/* 
       =============================================

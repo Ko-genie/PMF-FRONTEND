@@ -117,6 +117,7 @@ const OrganizationIdPage = () => {
           fontFamily: "inherit",
           fontWeight: "400",
           textShadow: "inherit",
+          // color: "#DB4A2B",
         }}
       >
         Generate AI-Powered Ads
@@ -194,10 +195,11 @@ const OrganizationIdPage = () => {
 
         {!loading ? (
           <Button
+            className="bg-[#DB4A2B] hover:bg-[#DB4A2B]/90"
             style={{
               padding: "8px 20px",
               boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.1)",
-              background: "rgb(102, 0, 255)",
+              background: "#DB4A2B",
               color: "white", // Ensure text color is visible
               marginTop: "10px",
               width: "10%",
@@ -205,12 +207,12 @@ const OrganizationIdPage = () => {
               transition: "all 0.3s ease", // Smooth transition for hover effect
             }}
             onMouseOver={(e) => {
-              e.currentTarget.style.background = "rgb(85, 0, 212)"; // Darker shade on hover
+              e.currentTarget.style.background = "#DB4A2B"; // Darker shade on hover
               e.currentTarget.style.boxShadow = "0px 4px 10px rgba(0, 0, 0, 0.2)"; // Stronger shadow
               e.currentTarget.style.transform = "translateY(-2px)"; // Slight lift on hover
             }}
             onMouseOut={(e) => {
-              e.currentTarget.style.background = "rgb(102, 0, 255)"; // Reset background
+              e.currentTarget.style.background = "#DB4A2B"; // Reset background
               e.currentTarget.style.boxShadow = "0px 2px 5px rgba(0, 0, 0, 0.1)"; // Reset shadow
               e.currentTarget.style.transform = "translateY(0)"; // Reset position
             }}
@@ -232,7 +234,7 @@ const OrganizationIdPage = () => {
             <div
               style={{
                 border: "4px solid #f3f3f3", // Light gray border
-                borderTop: "4px solid #6200ea", // Purple color for the top border
+                borderTop: "4px solid #DB4A2B",
                 borderRadius: "50%",
                 width: "40px",
                 height: "40px",

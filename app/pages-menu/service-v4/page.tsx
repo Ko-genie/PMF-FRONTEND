@@ -1,9 +1,7 @@
 import Image from "next/image";
-// import Footer from "@/components/home-page/home-6/FooterMenu";
 import Header from "@/components/home-page/home-6/Header";
 import Block2 from "@/components/services/Block2";
 import Faq4 from "@/components/faqs/Faq4";
-// import Testimonial from "@/components/services/Testimonial";
 import CallToActions from "@/components/services/CallToActions";
 import FooterMenu from "@/components/home-page/home-6/FooterMenu";
 import CopyrightFooter2 from "@/components/footer/CopyrightFooter2";
@@ -13,23 +11,6 @@ const ServiceV4 = () => {
     <>
       {/* Header */}
       <Header />
-
-      {/* Inner Banner */}
-      {/* <div className="inner-banner-three text-center p-30">
-        <div
-          className="bg-wrapper text-center"
-          style={{ backgroundImage: "url(/images/assets/bg-17.svg)" }}
-        >
-          <div className="container">
-            <div className="title-style-five">
-              <h2 className="main-title tx-dark fw-bold">Our Services</h2>
-            </div>
-            <p className="fs-20 mt-30 lg-mt-20">
-              KOgenie offers top-tier solutions in e-commerce integration, product management, and digital marketing.
-            </p>
-          </div>
-        </div>
-      </div> */}
 
       {/* Feature Section One */}
       <div className="fancy-feature-one pt-120 lg-pt-90">
@@ -143,81 +124,9 @@ const ServiceV4 = () => {
         </div>
       </div>
 
-      {/* Feedback Section */}
-      {/* <div
-        className="feedback-section-one zn2 position-relative"
-        data-aos="fade-up"
-      >
-        <div className="bg-white zn2 position-relative pt-150 lg-pt-100">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-lg-6 col-md-7 m-auto">
-                <div className="title-style-one text-center">
-                  <h2 className="main-title fw-bold tx-dark m0">
-                    What <span>Our Clients</span> Say About KOgenie.
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </div>
-          <Testimonial />
-        </div>
-      </div>
-
-      {/* Wrapper */}
-      {/* <div className="wrapper position-relative mt-160 lg-mt-100">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-8 col-lg-10 m-auto text-center">
-              <div className="title-style-one" data-aos="fade-up">
-                <h2 className="main-title fw-bold tx-dark m0">
-                  Ready to get started? It’s just a matter of{" "}
-                  <span>one click</span>.
-                </h2>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <Image
-          width={8}
-          height={8}
-          src="/images/shape/shape_20.svg"
-          alt="shape"
-          className="lazy-img shapes shape-one"
-          style={{ top: "5%", left: "10%" }}
-        />
-        <Image
-          width={11}
-          height={11}
-          src="/images/shape/shape_21.svg"
-          alt="shape"
-          className="lazy-img shapes shape-two"
-          style={{ bottom: "-4%", left: "18%" }}
-        />
-        <Image
-          width={9}
-          height={9}
-          src="/images/shape/shape_22.svg"
-          alt="shape"
-          className="lazy-img shapes shape-three"
-          style={{ bottom: "-4%", right: "23%" }}
-        />
-        <Image
-          width={16}
-          height={14}
-          src="/images/shape/shape_23.svg"
-          alt="shape"
-          className="lazy-img shapes shape-four"
-          style={{ top: "-3%", right: "14%" }}
-        /> */}
-      {/* </div> */} 
-
       {/* Call To Actions */}
 
       <CallToActions />
-
-
 
      {/* Footer */}
      <div className="footer-style-two theme-basic-footer">

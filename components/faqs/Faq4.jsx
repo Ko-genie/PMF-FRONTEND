@@ -1,39 +1,52 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
+import { Collapse } from 'bootstrap'; // Import Bootstrap Collapse directly
 
 const faqData = [
   {
     id: 1,
-    question: "How does KOgenie integrate with e-commerce platforms?",
+    question: "What is hyper-targeted influence?",
     answer:
-      "KOgenie provides seamless integration with popular e-commerce platforms, ensuring that product data is managed efficiently and synchronized across multiple channels.",
+      "Hyper-targeted influence is about creating messages,ads, or content that feels deeply personal, as if we truly understand the individual we're targeting. The aim is to craft communications so precisely tailored that they connect on an instinctive level with the recipient.",
   },
   {
     id: 2,
-    question: "What digital marketing services does KOgenie offer?",
+    question: "How Kogenie use Generative ai?",
     answer:
-      "KOgenie offers a range of digital marketing services, including search engine optimization (SEO), pay-per-click (PPC) advertising, and social media marketing to help businesses grow their online presence.",
+      "KOgenie's Generative AI creates personalized texts and images tailored to an individual's preferences or to group - level data when specific information is unavailable. This allows us to craft highly relevant and resonant communications.",
   },
   {
     id: 3,
-    question: "Can KOgenie help with product catalog management?",
+    question: "What kind of data does KOgenie use??",
     answer:
-      "Yes, KOgenie specializes in product catalog management, allowing businesses to organize and update their product listings across platforms effortlessly.",
+      "We use granular data, including individual-specific or demographic-level information, to ensure our messaging is as precise and relevant as possible. This data is the foundation for creating impactful and presonalized messages.",
   },
   {
     id: 4,
-    question: "What kind of support does KOgenie provide?",
+    question: "What is automated A/B testing?",
     answer:
-      "KOgenie offers 24/7 customer support to ensure that any technical issues or queries are resolved quickly, keeping your business running smoothly.",
+      "Automated A/B testing is a critcial part of our stratergy. By continously testing and refining our advertisment, we ensure that they are optimized for the best possible results. This process helps us determine which variation of our advertisement performs best, allowing us to imporve effectiveness over time.",
   },
   {
     id: 5,
-    question: "How does KOgenie handle data analytics?",
+    question: "How can KOgenie help with branding and emotional influence?",
     answer:
-      "KOgenie’s advanced data analytics tools provide deep insights into customer behavior, helping businesses make data-driven decisions to enhance their strategies.",
+      "KOgenie can craft advertisment that shift our reinforce opinions and evoke specific emotions. By alligning our content with emotions or opinions we aims to influence, we help you achieve your branding goal effectively.",
   },
 ];
 
 const Faq4 = () => {
+  useEffect(() => {
+    // Initialize all collapsible elements within the accordion
+    faqData.forEach((faq) => {
+      const collapseElement = document.getElementById(`collapse${faq.id}`);
+      if (collapseElement) {
+        new Collapse(collapseElement, { toggle: false });
+      }
+    });
+  }, []);
+
   return (
     <div className="accordion accordion-style-two" id="accordionOne">
       {faqData.map((faq) => (
@@ -52,9 +65,7 @@ const Faq4 = () => {
           </div>
           <div
             id={`collapse${faq.id}`}
-            className={`accordion-collapse collapse ${
-              faq.id === 1 ? "show" : ""
-            }`}
+            className={`accordion-collapse collapse ${faq.id === 1 ? "show" : ""}`}
             aria-labelledby={`heading${faq.id}`}
             data-bs-parent="#accordionOne"
           >

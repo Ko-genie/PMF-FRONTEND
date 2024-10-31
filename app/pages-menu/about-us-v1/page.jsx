@@ -1,12 +1,8 @@
-// import DefaultFooter from "@/components/footer/DefaultFooter";
-// import Partners from "@/components/services/Partners";
-// import Faq from "@/components/services/Faq";
 import Testimonial from "@/components/home-page/home-3/Testimonial";
 import Block from "@/components/services/Block";
 import Team1 from "@/components/team/Team1";
 import Link from "next/link";
 import VideoBlock from "@/components/about/VideoBlock";
-// import Counter from "@/components/about/Counter";
 import Header from "@/components/home-page/home-6/Header";
 import Image from "next/image";
 import FooterMenu from "@/components/home-page/home-6/FooterMenu";
@@ -17,14 +13,6 @@ const AboutUsV1 = () => {
     { text: "Innovating AI solutions" },
     { text: "24/7 customer support." },
   ];
-
-  // const starRating = Array(5)
-  //   .fill()
-  //   .map((_, index) => (
-  //     <li key={index}>
-  //       <i className="fa-solid fa-star" />
-  //     </li>
-  //   ));
 
   return (
     <>

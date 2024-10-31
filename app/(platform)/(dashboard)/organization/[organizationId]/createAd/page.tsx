@@ -10,6 +10,7 @@ import {
   faPaperPlane,
   faBookmark,
 } from "@fortawesome/free-solid-svg-icons";
+import { Button } from "@/components/ui/button";
 
 const CreateAdPage = () => {
   const adDataFromStore = useAdStore((state) => state.adData); // Get data from store
@@ -56,68 +57,67 @@ const CreateAdPage = () => {
     }));
   };
 
-// Crop and resize image to match aspect ratio
-const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-  const file = event.target.files?.[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      // Use the native Image constructor explicitly
-      const img = new window.Image(640, 360);
-      img.src = e.target?.result as string;
-      img.onload = () => {
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
+  // Crop and resize image to match aspect ratio
+  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new window.Image();
+        img.src = e.target?.result as string;
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
 
-        // Define aspect ratios: 1:1 (square), 4:5 (portrait), 16:9 (landscape)
-        let targetWidth = 640;
-        let targetHeight = 360; // Default for 16:9
+          // Define aspect ratios: 1:1 (square), 4:5 (portrait), 16:9 (landscape)
+          let targetWidth = 1080;
+          let targetHeight = 608; // Default for 16:9
 
-        if (aspectRatio === "1:1") {
-          targetWidth = 640;
-          targetHeight = 640;
-        } else if (aspectRatio === "4:5") {
-          targetWidth = 640;
-          targetHeight = 800;
-        }
+          if (aspectRatio === "1:1") {
+            targetWidth = 1080;
+            targetHeight = 1080;
+          } else if (aspectRatio === "4:5") {
+            targetWidth = 1080;
+            targetHeight = 1350;
+          }
 
-        canvas.width = targetWidth;
-        canvas.height = targetHeight;
+          canvas.width = targetWidth;
+          canvas.height = targetHeight;
 
-        // Calculate cropping area based on the image's original aspect ratio
-        const imgAspectRatio = img.width / img.height;
-        let sourceWidth = img.width;
-        let sourceHeight = img.height;
+          // Calculate cropping area based on the image's original aspect ratio
+          const imgAspectRatio = img.width / img.height;
+          let sourceWidth = img.width;
+          let sourceHeight = img.height;
 
-        if (imgAspectRatio > targetWidth / targetHeight) {
-          sourceWidth = img.height * (targetWidth / targetHeight);
-        } else {
-          sourceHeight = img.width / (targetWidth / targetHeight);
-        }
+          if (imgAspectRatio > targetWidth / targetHeight) {
+            sourceWidth = img.height * (targetWidth / targetHeight);
+          } else {
+            sourceHeight = img.width / (targetWidth / targetHeight);
+          }
 
-        // Center the crop
-        const startX = (img.width - sourceWidth) / 2;
-        const startY = (img.height - sourceHeight) / 2;
+          // Center the crop
+          const startX = (img.width - sourceWidth) / 2;
+          const startY = (img.height - sourceHeight) / 2;
 
-        ctx?.drawImage(
-          img,
-          startX,
-          startY,
-          sourceWidth,
-          sourceHeight,
-          0,
-          0,
-          targetWidth,
-          targetHeight
-        );
+          ctx?.drawImage(
+            img,
+            startX,
+            startY,
+            sourceWidth,
+            sourceHeight,
+            0,
+            0,
+            targetWidth,
+            targetHeight
+          );
 
-        const resizedImageUrl = canvas.toDataURL("image/jpeg", 1.0); // High-quality image
-        setImageUrl(resizedImageUrl); // Set the resized image URL
+          const resizedImageUrl = canvas.toDataURL("image/jpeg", 1.0);
+          setImageUrl(resizedImageUrl);
+        };
       };
-    };
-    reader.readAsDataURL(file);
-  }
-};
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleDownload = () => {
     if (imageUrl) {
@@ -196,7 +196,7 @@ const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
             style={{
               display: "block",
               fontSize: "16px",
-              color: "#4f46e5",
+              color: "#DB4A2B",
               marginBottom: "8px",
               fontWeight: "600",
             }}
@@ -218,7 +218,7 @@ const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
             style={{
               display: "block",
               fontSize: "16px",
-              color: "#4f46e5",
+              color: "#DB4A2B",
               marginBottom: "8px",
               fontWeight: "600",
             }}
@@ -240,7 +240,7 @@ const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
             style={{
               display: "block",
               fontSize: "16px",
-              color: "#4f46e5",
+              color: "#DB4A2B",
               marginBottom: "8px",
               fontWeight: "600",
             }}
@@ -261,7 +261,7 @@ const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
             style={{
               display: "block",
               fontSize: "16px",
-              color: "#4f46e5",
+              color: "#DB4A2B",
               marginBottom: "8px",
               fontWeight: "600",
             }}
@@ -292,7 +292,7 @@ const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
       >
         <p style={{ fontSize: "14px", color: "#6b7280", marginBottom: "10px" }}>
           Tip: For the best Instagram preview, use an image with a 16:9 aspect
-          ratio (640x360 pixels).
+          ratio (1080x608 pixels).
         </p>
 
         <label
@@ -301,7 +301,7 @@ const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
           style={{
             cursor: "pointer",
             padding: "10px 20px",
-            background: "rgb(102, 0, 255)",
+            background: "#DB4A2B",
             boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.1)",
             color: "#fff",
             borderRadius: "8px",
@@ -331,10 +331,10 @@ const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
             style={{ textAlign: "center", marginBottom: "20px" }}
           >
             <Image
-              src="/background1.jpg"
+              src="/images/media/img_86.jpg"
               alt="Placeholder"
-              width={640}
-              height={360}
+              width={1080}
+              height={aspectRatio === "4:5" ? 1350 : aspectRatio === "1:1" ? 1080 : 608}
               style={{ borderRadius: "12px" }}
             />
           </div>
@@ -381,8 +381,8 @@ const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
               <Image
                 src={imageUrl}
                 alt="Uploaded"
-                width={640}
-                height={360}
+                width={1080}
+                height={aspectRatio === "4:5" ? 1350 : aspectRatio === "1:1" ? 1080 : 608}
                 style={{ borderRadius: "12px" }}
               />
             </div>
@@ -442,13 +442,13 @@ const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
         )}
 
         {imageUrl && (
-          <button
-            className="download-btn"
+          <Button
+            className="bg-[#DB4A2B] hover:bg-[#DB4A2B]/90"
             onClick={handleDownload}
             style={{
               marginTop: "10px",
               padding: "10px 20px",
-              background: "rgb(102, 0, 255)",
+              background: "#DB4A2B",
               boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.1)",
               color: "#fff",
               border: "none",
@@ -459,7 +459,7 @@ const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
             }}
           >
             Download Image
-          </button>
+          </Button>
         )}
       </div>
     </div>
