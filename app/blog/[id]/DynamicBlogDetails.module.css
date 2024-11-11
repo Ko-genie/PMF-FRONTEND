@@ -43,3 +43,12 @@
     margin-left: 15px;
     color: #555;
   }
+/* DynamicBlogDetails.module.css */
+.link {
+  color: #3498db; /* Customize your link color */
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #1abc9c; /* Hover color */
+}

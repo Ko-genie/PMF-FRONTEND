@@ -36,13 +36,42 @@ const ContactV4 = () => {
                 >
                   CONTACT US
                 </div> */}
-                <h2 className="main-title font-recoleta fw-normal tx-dark">
-                  Our team are here to help you.
+                <h2 style={{top:'20px'}}className="main-title font-recoleta fw-normal tx-dark">
+                  Looking for something ?
+                </h2>
+
+                <h2
+                  style={{
+                    fontSize: "30px",
+                    color: "coral",
+                  }}
+                  className="main-title font-recoleta fw-normal tx-dark "
+                >
+                  Or AI Has You Feeling a Bit Confused ?
+                </h2>
+                <br />
+                <br />
+
+
+                <h2
+                  style={{
+                    fontSize: "18px",
+                    fontStyle: "italic",
+                  }}
+                  className="main-title font-recoleta fw-normal tx-dark"
+                >
+                  We get it—AI can be a lot to take in! Whether you’re here for
+                  answers, curious about our technology of creating AI-powered
+                  ad personalization, or just want to say hello, you’re in the
+                  right place. Drop us a line, and we’ll help you make sense of
+                  it all.
                 </h2>
               </div>
               {/* /.title-style-fourteen */}
+              <div></div>
             </div>
           </div>
+
           <div className="row">
             <BlockContact5 />
           </div>
@@ -78,8 +107,8 @@ const ContactV4 = () => {
         Contact Section One
         ============================================== 
         */}
-           {/* Footer */}
-     <div className="footer-style-two theme-basic-footer">
+      {/* Footer */}
+      <div className="footer-style-two theme-basic-footer">
         <div className="top-footer position-relative">
           <div className="container">
             <div className="inner-wrapper m-auto">
@@ -91,7 +120,6 @@ const ContactV4 = () => {
         </div>
 
         <CopyrightFooter2 />
-
       </div>
     </>
   );

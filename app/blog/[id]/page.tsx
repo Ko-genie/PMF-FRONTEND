@@ -10,7 +10,7 @@ import SocialShare from "@/components/blog/blog-details/SocialShare";
 // import SingleComments from "@/components/blog/blog-details/SingleComments";
 // import CommentBox from "@/components/blog/blog-details/CommentBox";
 // import Link from "next/link";
-import blogsData from "@/data/blog";
+import blogsData from "@/data/blog.js";
 import Image from "next/image";
 import styles from "./DynamicBlogDetails.module.css"; // Import CSS module
 
@@ -86,7 +86,9 @@ const DynamicBlogDetails: React.FC<DynamicBlogDetailsProps> = ({ params }) => {
                     {blog.subheadings && blog.subheadings.map((sub, index) => (
                       <div key={index}>
                         <h3 className={styles.subheadingTitle}>{sub.title}</h3>
-                        <p>{sub.content}</p>
+                        <p
+                        dangerouslySetInnerHTML={{ __html: sub.content }}
+                        />
                       </div>
                     ))}
 

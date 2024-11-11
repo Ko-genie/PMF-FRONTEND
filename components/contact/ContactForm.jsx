@@ -10,7 +10,7 @@ const ContactForm4 = () => {
             <label>Name*</label>
             <input
               type="text"
-              placeholder="Kogenie"
+              placeholder="Who are we chatting with?"
               name="name"
               required="required"
             />
@@ -24,7 +24,7 @@ const ContactForm4 = () => {
             <label>Email*</label>
             <input
               type="email"
-              placeholder="kogenie@gmail.com"
+              placeholder="Where can we reach you?"
               name="email"
               required="required"
             />
@@ -36,7 +36,7 @@ const ContactForm4 = () => {
         <div className="col-12">
           <div className="input-group-meta form-group mb-45">
             <textarea
-              placeholder="Your message*"
+              placeholder="Tell us what’s on your mind…"
               name="message"
               required="required"
               defaultValue={""}
