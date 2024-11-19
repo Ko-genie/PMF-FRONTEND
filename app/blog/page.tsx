@@ -1,10 +1,8 @@
 import FooterMenu from "@/components/home-page/home-6/FooterMenu";
 import CopyrightFooter2 from "@/components/footer/CopyrightFooter2";
-// import Pagination from "@/components/blog/Pagination";
 import SearchBox from "@/components/blog/SearchBox";
 import Category from "@/components/blog/Category";
 import RecentPost from "@/components/blog/RecentPost";
-// import BannerPost from "@/components/blog/BannerPost";
 import Blog2 from "@/components/blog/Blog";
 import Header from "@/components/home-page/home-6/Header";
 import Image from "next/image";
@@ -62,10 +60,6 @@ const GridWithSidebar = () => {
                     <Blog2 />
                   </div>
                 </div>
-                {/* /.blog-meta-wrapper */}
-                {/* <div className="page-pagination-one pt-15">
-                  <Pagination />
-                </div> */}
               </div>
               {/* End .col-lg-8 */}
 
@@ -86,10 +80,6 @@ const GridWithSidebar = () => {
                     <h4 className="sidebar-title">Recent News</h4>
                     <RecentPost />
                   </div>
-                  {/* /.sidebar-recent-news */}
-
-                  {/* <BannerPost /> */}
-                  {/* /.sidebar-banner-add */}
                 </div>
                 {/* /.blog-sidebar */}
               </div>

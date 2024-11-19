@@ -1,11 +1,13 @@
-const { title } = require("process");
-
-module.exports = [
+// import slugify from "slugify";
+// const { title } = require("process");
+import slugify from "slugify";
+const blogsData = [
   {
     id: 1,
     imageSrc: "/images/blog/blog_img_01.jpg",
     date: "28 Oct, 2024",
     title: "The Rise of Voice Search in Digital Marketing",
+    slug: "The-Rise-of-Voice-Search-in-Digital-Marketing",
     delay: "100",
     content:
       "Voice search is rapidly transforming the way consumers interact with brands online. As voice-activated devices become more common, optimizing for voice search is essential for brands looking to stay competitive. Voice search enables quicker, more conversational queries, meaning brands must adapt their SEO strategies to match this shift. By understanding and leveraging voice search, brands can enhance their reach, improve user experience, and connect with consumers in a more intuitive way.",
@@ -59,6 +61,7 @@ module.exports = [
     imageSrc: "/images/blog/blog_img_02.jpg",
     date: "28 Oct, 2024",
     title: "Embracing Interactive Content for Higher Engagement",
+    slug: "Embracing-Interactive-Content-for-Higher-Engagement",
     delay: "100",
     content:
       "Interactive content is reshaping digital marketing by engaging users in more dynamic and personalized ways. Unlike static content, interactive content encourages user participation, making it more memorable and effective. From quizzes and polls to augmented reality experiences, interactive elements drive engagement, increase time on site, and build stronger brand connections. By embracing interactive content, brands can create a more immersive and valuable user experience.",
@@ -112,6 +115,7 @@ module.exports = [
     imageSrc: "/images/blog/blog_img_03.jpg",
     date: "28 Oct, 2024",
     title: "Using Micro-Moments to Enhance Customer Experience",
+    slug: "Using-Micro-Moments-to-Enhance-Customer-Experience",
     delay: "100",
     content:
       "Micro-moments are instances when consumers turn to their devices to quickly satisfy an immediate need, such as finding information or making a purchase. Recognizing and capitalizing on these micro-moments allows brands to deliver targeted content that addresses specific needs at the right time. By focusing on micro-moments, brands can improve user experience, boost engagement, and increase conversions by being there in the exact moments customers need them.",
@@ -165,6 +169,7 @@ module.exports = [
     tag: "Education",
     tagStyle: { background: "#FFEAC9" },
     title: "Internet advertising what Went wrong.",
+    slug: "How-AI-Ad-Copy-Generators-Are-Revolutionizing-Advertising",
     description: "Having a home based business is a wonderful asset to your...",
     imageSrc: "/images/blog/blog_img_09.jpg",
     delay: "100",
@@ -174,6 +179,7 @@ module.exports = [
     tag: "Charity",
     tagStyle: { background: "#C9F0FF" },
     title: "Internet advertising what Went wrong.",
+    slug: "How-AI-Ad-Copy-Generators-Are-Revolutionizing-Advertising",
     description: "Having a home based business is a wonderful asset to your...",
     imageSrc: "/images/blog/blog_img_09.jpg",
     delay: "200",
@@ -183,6 +189,7 @@ module.exports = [
     tag: "Children",
     tagStyle: { background: "#FFEAEA" },
     title: "Internet advertising what Went wrong.",
+    slug: "How-AI-Ad-Copy-Generators-Are-Revolutionizing-Advertising",
     description: "Having a home based business is a wonderful asset to your...",
     imageSrc: "/images/blog/blog_img_09.jpg",
     delay: "300",
@@ -191,6 +198,7 @@ module.exports = [
     id: 7,
     imageSrc: "/images/blog/blog_img_13.jpg",
     title: "Print, publishing qui visual ux quis layout mockups.",
+    slug: "How-AI-Ad-Copy-Generators-Are-Revolutionizing-Advertising",
     date: "23 Apr, 2022",
     delay: "100",
   },
@@ -198,6 +206,7 @@ module.exports = [
     id: 8,
     imageSrc: "/images/blog/blog_img_14.jpg",
     title: "Make more productive working flow daily.",
+    slug: "How-AI-Ad-Copy-Generators-Are-Revolutionizing-Advertising",
     date: "23 Apr, 2022",
     delay: "200",
   },
@@ -205,6 +214,8 @@ module.exports = [
     id: 9,
     title:
       "Medieval origins to the digital era, everything there is to know. Excepteur sint occaecat cupidatat",
+      
+    slug: "How-AI-Ad-Copy-Generators-Are-Revolutionizing-Advertising",
     date: "23 Apr, 2022",
     className: "text-style",
     delay: "300",
@@ -214,6 +225,7 @@ module.exports = [
     imageSrc: "/images/blog/blog_img_15.jpg",
     title:
       "Quis nostrud exercitation ullamco laboris nisi ut aliquip commodo cons.",
+    slug: "How-AI-Ad-Copy-Generators-Are-Revolutionizing-Advertising",
     date: "23 Apr, 2022",
     delay: "400",
   },
@@ -221,6 +233,7 @@ module.exports = [
     id: 11,
     imageSrc: "/images/blog/blog_img_16.jpg",
     title: "Designer’s Checklist for Every UX/UI Project.",
+    slug: "How-AI-Ad-Copy-Generators-Are-Revolutionizing-Advertising",
     date: "23 Apr, 2022",
     delay: "500",
   },
@@ -229,6 +242,7 @@ module.exports = [
     imageSrc: "/images/blog/blog_img_20.jpg",
     date: "28 Oct, 2024",
     title: "How AI Ad Copy Generators Are Revolutionizing Advertising",
+    slug: "How-AI-Ad-Copy-Generators-Are-Revolutionizing-Advertising",
     delay: "100",
     content:
       "All businesses are run by advertising and marketing of any and various kinds. As the number of advertising mediums grows with the rise of digital and programmatic advertising, so does the competition in advertising. By 2024, the global advertising market is projected to reach nearly $978.5 billion, with a compound annual growth rate (CAGR) of 4.6% from 2024 to 2032. The advertisment is undergoing rapid transformation, propelled by the rapid rise of AI showing 65% of organizations reported regular use of generative AI. Companies like Google, Facebook, and Amazon dominate the digital advertising landscape, leveraging their massive data pools and advanced AI capabilites to offer more precise ad targeting and real-time analytics. This enables advertisers to deliver hyper-personalised ads that resonate with individual users increasing usage and ROI. And there's more to how and why AI ad copy generators are getting the inclination and grabbing attention. In this read, we will look into how AI ad copy generators are revolutionaising advertising.",
@@ -327,6 +341,7 @@ Because at the end of the day, we need engagements! <ul><li style="margin-left: 
     imageSrc: "/images/blog/blog_img_21.jpg",
     date: "28 Oct, 2024",
     title: "Unleashing the Power of AI in Digital Marketing with KOgenie",
+    slug: "Unleashing-the-Power-of-AI-in-Digital-Marketing-with-KOgenie",
     delay: "100",
     content:
       "KOgenie is revolutionizing digital marketing by using advanced AI tools to deliver hyper-targeted, emotionally resonant content. Leveraging granular data, AI-generated content, and real-time A/B testing, KOgenie provides highly personalized messages that drive both engagement and action. By freeing up time from manual tasks, KOgenie empowers marketing teams to focus on creativity and innovation, allowing them to craft campaigns that captivate audiences.",
@@ -410,6 +425,7 @@ Because at the end of the day, we need engagements! <ul><li style="margin-left: 
     imageSrc: "/images/blog/blog_img_22.jpg",
     date: "28 Oct, 2024",
     title: "Why Hyper-Targeted Influence is the Future of Marketing",
+    slug: "Why-Hyper-Targeted-Influence-is-the-Future-of-Marketing",
     delay: "100",
     content:
       "As digital marketing rapidly evolves, hyper-targeted influence is becoming essential for brands seeking to connect meaningfully with consumers. With KOgenie’s AI-powered tools, businesses can deliver highly personalized content that not only aligns with but also exceeds consumer expectations. Our platform provides advanced analytics and real-time data analysis to continually refine strategies, enabling brands to set trends, not just follow them.",
@@ -468,6 +484,7 @@ Because at the end of the day, we need engagements! <ul><li style="margin-left: 
     imageSrc: "/images/blog/blog_img_23.jpg",
     date: "28 Oct, 2024",
     title: "How Generative AI is Shaping the Future of Marketing",
+    slug: "How-Generative-AI-is-Shaping-the-Future-of-Marketing",
     delay: "100",
     content:
       "Generative AI is revolutionizing marketing by enabling brands to create highly personalized, engaging, and dynamic content at scale. Through advanced AI algorithms, generative AI empowers marketers to produce unique content, design hyper-targeted ads, and optimize campaigns in real-time. This transformation not only enhances brand storytelling but also allows for an agile marketing approach that resonates with individual consumers on a personal level.",
@@ -531,6 +548,7 @@ Because at the end of the day, we need engagements! <ul><li style="margin-left: 
     imageSrc: "/images/blog/blog_img_24.jpg",
     date: "28 Oct, 2024",
     title: "The Power of Personalization in Modern Advertising",
+    slug: "The-Power-of-Personalization-in-Modern-Advertising",
     delay: "100",
     content:
       "Personalization is transforming the landscape of modern advertising by allowing brands to connect with consumers on a deeper level. By leveraging data-driven insights, brands can tailor ads to match individual preferences, creating a more engaging and relevant user experience. The power of personalization goes beyond just capturing attention—it fosters brand loyalty and drives meaningful consumer action.",
@@ -595,6 +613,7 @@ Because at the end of the day, we need engagements! <ul><li style="margin-left: 
     imageSrc: "/images/blog/blog_img_25.jpg",
     date: "28 Oct, 2024",
     title: "Optimizing Campaigns: The Role of A/B Testing",
+    slug: "Optimizing-Campaigns-The-Role-of-A/B-Testing",
     delay: "100",
     content:
       "A/B testing is a powerful tool for optimizing marketing campaigns by comparing different versions of content to determine which performs better. By testing variables such as headlines, visuals, and calls-to-action, brands can gather data on audience preferences, make data-driven adjustments, and ultimately improve conversion rates. A/B testing empowers marketers to refine their strategies continuously, ensuring campaigns are effective and resonate with their target audience.",
@@ -658,6 +677,7 @@ Because at the end of the day, we need engagements! <ul><li style="margin-left: 
     imageSrc: "/images/blog/blog_img_26.jpg",
     date: "28 Oct, 2024",
     title: "Leveraging Real-Time Analytics for Marketing Success",
+    slug: "Leveraging-Real-Time-Analytics-for-Marketing-Success",
     delay: "100",
     content:
       "Real-time analytics has revolutionized marketing, allowing brands to make instant, data-driven decisions. Unlike traditional methods that rely on historical data, real-time analytics enables marketers to respond to current user interactions, ensuring campaigns are always relevant and effective. By monitoring performance in real time, brands can adapt to audience behaviors and trends, enhancing engagement and driving higher ROI.",
@@ -711,6 +731,7 @@ Because at the end of the day, we need engagements! <ul><li style="margin-left: 
     imageSrc: "/images/blog/blog_img_27.jpg",
     date: "28 Oct, 2024",
     title: "Understanding Customer Journey Mapping in Digital Marketing",
+    slug: "Understanding-Customer-Journey-Mapping-in-Digital-Marketing",
     delay: "100",
     content:
       "Customer journey mapping is a powerful tool that visualizes each step a consumer takes from awareness to purchase. By understanding these touchpoints, brands can address customer needs at each stage, optimize experiences, and reduce friction, creating a seamless journey that increases the likelihood of conversion and fosters loyalty.",
@@ -759,143 +780,6 @@ Because at the end of the day, we need engagements! <ul><li style="margin-left: 
       },
     ],
   },
-  {
-    id: 20,
-    tag: "Design",
-    title: "Until recently, the prevailing view assumed lorem ipsum was..",
-    date: "18 Jul 2022",
-    delay: "100",
-  },
-  {
-    id: 21,
-    tag: "Development",
-    title: "Print, publishing qui visual ux quis layout mockups.",
-    date: "18 Jul 2022",
-    delay: "200",
-  },
-  {
-    id: 22,
-    tag: "Design",
-    title: "Until recently, the prevailing view assumed lorem ipsum was..",
-    date: "18 Jul 2022",
-    delay: "100",
-  },
-  {
-    id: 23,
-    tag: "Development",
-    title: "Print, publishing qui visual ux quis layout mockups.",
-    date: "18 Jul 2022",
-    delay: "200",
-  },
-  {
-    id: 24,
-    tag: "Development",
-    title: "Print, publishing qui visual ux quis layout mockups.",
-    date: "18 Jul 2022",
-    delay: "100",
-  },
-  {
-    id: 25,
-    tag: "Design",
-    title: "Until recently, the prevailing view assumed lorem ipsum was..",
-    date: "18 Jul 2022",
-    delay: "200",
-  },
-  {
-    id: 26,
-    imageSrc: "/images/blog/blog_img_12.jpg",
-    tag: "Design",
-    title: "Speaking remotely at WordCamp US.",
-    date: "18 Jul 2022",
-    delay: "100",
-  },
-  {
-    id: 27,
-    imageSrc: "/images/media/img_83.jpg",
-    tag: "PROPERTY",
-    title: "Print, publishing qui visual ux quis layout mockups.",
-    date: "18 Jul 2022",
-    delay: "200",
-  },
-  {
-    id: 28,
-    image: "url(/images/blog/blog_img_07.jpg)",
-    imageSrc: "/images/blog/blog_img_07.jpg",
-    logo: "/images/logo/Plogo-32.png",
-    icon: "/images/icon/icon_87.svg",
-    title:
-      "Seattle Opera Simplifies Performance Planning with deski eSignature.",
-    videoId: "Vsq1_kewchQ",
-  },
-  {
-    id: 29,
-    image: "url(/images/blog/blog_img_08.jpg)",
-    imageSrc: "/images/blog/blog_img_08.jpg",
-    logo: "/images/logo/Plogo-33.png",
-    icon: "/images/icon/icon_87.svg",
-    title: "How DocuSign CLM Helps Celonis Scale Its Global Business.",
-    videoId: "J4HLbKkcheE",
-  },
-
-  {
-    id: 30,
-    imageSrc: "/images/blog/blog_img_01.jpg",
-    tag: "Technology",
-    tagBgColor: "#FFEAC9",
-    title: "A Discount Cartridge dsu is Better Ever.",
-  },
-  {
-    id: 31,
-    imageSrc: "/images/blog/blog_img_02.jpg",
-    tag: "Design",
-    tagBgColor: "#CEEBF4",
-    title: "Good design is the key of business.",
-  },
-  {
-    id: 32,
-    imageSrc: "/images/blog/blog_img_03.jpg",
-    tag: "Support",
-    tagBgColor: "#FFDFDF",
-    title: "Client satisfaction is the goal of business success.",
-  },
-  {
-    id: 33,
-    imageSrc: "/images/blog/blog_img_04.jpg",
-    date: "23 Apr, 2022",
-    title: "A Discount Cartridge dsu is Better Ever.",
-  },
-  {
-    id: 34,
-    imageSrc: "/images/blog/blog_img_05.jpg",
-    date: "14 march, 2022",
-    title: "Truck Side Advertising Isn It Time for action.",
-  },
-  {
-    id: 35,
-    imageSrc: "/images/blog/blog_img_06.jpg",
-    date: "27 feb, 2022",
-    title: "A Discount Cartridge dsu is Better Ever.",
-  },
-  {
-    id: 36,
-    imgSrc: "/images/blog/blog_img_27.jpg",
-    tag: "Client Story",
-    title: "How Zendesk delivers quality customer service with Jano.",
-    delay: 100,
-  },
-  {
-    id: 37,
-    imgSrc: "/images/blog/blog_img_28.jpg",
-    tag: "Client Story",
-    title:
-      "Quis nostrud exercitation ullamco laboris nisi ut ali commodo cons.",
-    delay: 200,
-  },
-  {
-    id: 38,
-    imgSrc: "/images/blog/blog_img_29.jpg",
-    tag: "Client Story",
-    title: "How Zendesk delivers quality customer service with Jano.",
-    delay: 300,
-  },
 ];
+
+export default blogsData;
